@@ -13,6 +13,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-3 z-50 mx-auto w-[calc(100%-2rem)] max-w-[1240px] sm:top-5">
+      {/* glass pill — top bar only */}
       <motion.div
         animate={{
           backgroundColor: scrolled ? "var(--header-bg-scrolled)" : "var(--header-bg)",
@@ -64,37 +65,40 @@ export function Header() {
             </button>
           </div>
         </div>
-
-        <AnimatePresence>
-          {open && (
-            <motion.nav
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="overflow-hidden md:hidden"
-              aria-label="Navigasi seluler"
-            >
-              <div className="mt-1 flex flex-col gap-1 border-t border-[var(--hairline-soft)] px-3 pb-3 pt-3">
-                {navLinks.map((l) => (
-                  <a
-                    key={l.href}
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="rounded-lg px-3 py-2.5 text-[var(--silk)] transition-colors hover:bg-[var(--obsidian)]"
-                  >
-                    {l.label}
-                  </a>
-                ))}
-                <div className="mt-1 flex items-center gap-[0.55rem] px-3 py-2 text-[0.68rem] font-medium tracking-[0.12em] text-[var(--silk)]">
-                  <span className="h-[6px] w-[6px] rounded-full bg-[var(--green)] animate-pulse-dot" />
-                  MENERIMA PESANAN <span className="text-[var(--muted)]">· Yuk pesan</span>
-                </div>
-              </div>
-            </motion.nav>
-          )}
-        </AnimatePresence>
       </motion.div>
+
+      {/* mobile menu — its OWN layer/panel (outside the blurred pill) so iOS
+          Safari always repaints it; backdrop-filter children can fail to paint. */}
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            style={{ transform: "translateZ(0)" }}
+            className="transform-gpu mt-2 overflow-hidden rounded-[18px] border border-[var(--hairline)] bg-[var(--surface)] shadow-[var(--shadow-diffuse)] md:hidden"
+            aria-label="Navigasi seluler"
+          >
+            <div className="flex flex-col gap-1 p-3">
+              {navLinks.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="rounded-lg px-3 py-3 text-[var(--silk)] transition-colors hover:bg-[var(--obsidian)] active:bg-[var(--obsidian)]"
+                >
+                  {l.label}
+                </a>
+              ))}
+              <div className="mt-1 flex items-center gap-[0.55rem] border-t border-[var(--hairline-soft)] px-3 pt-3 text-[0.68rem] font-medium tracking-[0.12em] text-[var(--silk)]">
+                <span className="h-[6px] w-[6px] rounded-full bg-[var(--green)] animate-pulse-dot" />
+                MENERIMA PESANAN <span className="text-[var(--muted)]">· Yuk pesan</span>
+              </div>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
