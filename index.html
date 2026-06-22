@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atelier Noctra — Jahit Kostum &amp; Cosplay Custom</title>
+    <meta
+      name="description"
+      content="Atelier Noctra — jahit kostum & cosplay custom dengan jahitan rapi, detail akurat, dan harga ramah mulai Rp 100k. Pas di badan, gratis revisi."
+    />
+    <meta property="og:title" content="Atelier Noctra — Jahit Kostum & Cosplay Custom" />
+    <meta property="og:description" content="Jahit kostum & cosplay custom. Jahitan rapi, detail akurat, harga ramah mulai Rp 100k." />
+    <meta property="og:type" content="website" />
+
+    <!-- Set theme before paint to avoid flash of wrong theme -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("noctra-theme");
+          var theme = stored || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+
+    <!-- Gold monogram favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141312'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-style='italic' fill='%23C5A880' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

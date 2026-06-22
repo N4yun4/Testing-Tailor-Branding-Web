@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+/* ============================================================
+   ATELIER NOCTRA — design tokens
+   Fonts are mapped into Tailwind so `font-serif` / `font-sans` work.
+   ============================================================ */
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  --ease-atelier: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---- The Midnight Boutique (dark) ---- */
+:root,
+:root[data-theme="dark"] {
+  --obsidian: #141312;
+  --surface: #211e1d;
+  --gold: #c5a880;
+  --silk: #eae6df;
+  --muted: #8c857b;
+  --green: #22c55e;
+  --on-gold: #141312;
+
+  --bg-rgb: 20, 19, 18;
+  --surface-rgb: 33, 30, 29;
+  --gold-rgb: 197, 168, 128;
+
+  --header-bg: rgba(33, 30, 29, 0.55);
+  --header-bg-scrolled: rgba(33, 30, 29, 0.82);
+
+  --hairline: rgba(197, 168, 128, 0.25);
+  --hairline-soft: rgba(197, 168, 128, 0.15);
+  --hairline-faint: rgba(197, 168, 128, 0.1);
+
+  --hero-texture-opacity: 0.16;
+  --img-grayscale: 0;
+  --img-brightness: 1;
+
+  /* edge-light for liquid glass */
+  --glass-inner: rgba(255, 255, 255, 0.06);
+  --shadow-diffuse: 0 30px 60px -28px rgba(0, 0, 0, 0.6);
+
+  color-scheme: dark;
+}
+
+/* ---- The Daylight Atelier (light) — still couture, never SaaS ---- */
+:root[data-theme="light"] {
+  --obsidian: #ece6db;
+  --surface: #f7f2e9;
+  --gold: #9a7b4f;
+  --silk: #211e1b;
+  --muted: #6e665b;
+  --green: #1f9d52;
+  --on-gold: #f7f2e9;
+
+  --bg-rgb: 236, 230, 219;
+  --surface-rgb: 247, 242, 233;
+  --gold-rgb: 154, 123, 79;
+
+  --header-bg: rgba(247, 242, 233, 0.62);
+  --header-bg-scrolled: rgba(247, 242, 233, 0.9);
+
+  --hairline: rgba(154, 123, 79, 0.34);
+  --hairline-soft: rgba(154, 123, 79, 0.2);
+  --hairline-faint: rgba(154, 123, 79, 0.12);
+
+  --hero-texture-opacity: 0.1;
+  --img-grayscale: 0;
+  --img-brightness: 1;
+
+  --glass-inner: rgba(255, 255, 255, 0.5);
+  --shadow-diffuse: 0 30px 60px -28px rgba(60, 45, 25, 0.22);
+
+  color-scheme: light;
+}
+
+/* ---- Base ---- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--obsidian);
+  color: var(--silk);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  transition: background-color 0.5s var(--ease-atelier), color 0.5s var(--ease-atelier);
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--on-gold);
+}
+
+/* ---- Perpetual motion keyframes (MOTION_INTENSITY 6) ---- */
+@keyframes noctra-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes noctra-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-pulse-dot {
+  animation: noctra-pulse 2s infinite;
+}
+
+.marquee-track {
+  animation: noctra-marquee 38s linear infinite;
+}
+
+/* Grain overlay lives on a fixed, pointer-events-none layer only */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-pulse-dot,
+  .marquee-track {
+    animation: none;
+  }
+}
