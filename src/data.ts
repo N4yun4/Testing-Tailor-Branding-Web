@@ -121,6 +121,11 @@ export const heroStats = [
 export const navLinks = [
   { href: "#archive", label: "Galeri" },
   { href: "#craft", label: "Proses" },
-  { href: "#commission", label: "Pemesanan" },
   { href: "#sizing", label: "Panduan Ukuran" },
+  { href: "#commission", label: "Pemesanan" },
 ];
+
+// Satu sumber nomor WhatsApp — ganti dengan nomormu (kode negara tanpa "+" atau "0").
+export const waNumber = "6281234567890";
+export const waLink = (text: string) =>
+  `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;

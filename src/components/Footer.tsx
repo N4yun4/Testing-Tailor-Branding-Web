@@ -1,15 +1,11 @@
 import { InstagramLogo, WhatsappLogo, TiktokLogo, ArrowUpRight } from "@phosphor-icons/react";
-import { navLinks } from "../data";
+import { navLinks, waLink } from "../data";
 
-// Ganti dengan nomor WhatsApp-mu (format internasional tanpa "+" atau "0").
-const waNumber = "6281234567890";
-const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(
-  "Halo Atelier Noctra, saya mau tanya soal pesanan kostum.",
-)}`;
+const waHref = waLink("Halo Atelier Noctra, saya mau tanya soal pesanan kostum.");
 
 const socials = [
   { label: "Instagram", href: "https://instagram.com", Icon: InstagramLogo },
-  { label: "WhatsApp", href: waLink, Icon: WhatsappLogo },
+  { label: "WhatsApp", href: waHref, Icon: WhatsappLogo },
   { label: "TikTok", href: "https://tiktok.com", Icon: TiktokLogo },
 ];
 
@@ -72,7 +68,7 @@ export function Footer() {
               Punya karakter incaran? Chat kami dulu — konsultasi &amp; estimasi gratis.
             </p>
             <a
-              href={waLink}
+              href={waHref}
               target="_blank"
               rel="noopener"
               className="mt-5 inline-flex items-center gap-2 rounded-[6px] border border-[var(--gold)] px-4 py-2.5 text-[0.82rem] font-medium tracking-[0.04em] text-[var(--silk)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--gold)] hover:text-[var(--on-gold)] active:scale-[0.98]"

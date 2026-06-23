@@ -16,8 +16,8 @@ export default function App() {
         <Hero />
         <Vault />
         <Craft />
-        <Commission />
         <SizingGuide />
+        <Commission />
       </main>
       <Footer />
     </>

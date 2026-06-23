@@ -1,8 +1,8 @@
 import { useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CheckCircle, CaretDown, ArrowUpRight } from "@phosphor-icons/react";
+import { CheckCircle, CaretDown, ArrowUpRight, WhatsappLogo } from "@phosphor-icons/react";
 import { MagneticButton } from "./MagneticButton";
-import { tiers, budgets, sizes } from "../data";
+import { tiers, budgets, sizes, waLink } from "../data";
 
 type Status = "idle" | "submitting" | "success";
 type Errors = { nama?: string; whatsapp?: string; character?: string; budget?: string };
@@ -79,6 +79,24 @@ export function Commission() {
             Isi data diri dan detail kostumnya selengkap mungkin — makin lengkap, makin cepat
             kami bantu hitung dan carikan bahan yang pas.
           </p>
+
+          <div className="mt-7 rounded-2xl border border-[var(--hairline)] bg-[var(--surface)] p-5">
+            <p className="text-[0.9rem] leading-relaxed text-[var(--muted)]">
+              Lebih nyaman ngobrol dulu? Bisa langsung{" "}
+              <span className="text-[var(--silk)]">pesan &amp; konsultasi via WhatsApp</span> — kami
+              bantu pilih bahan, ukuran, dan estimasi harga.
+            </p>
+            <a
+              href={waLink("Halo Atelier Noctra, saya mau pesan / konsultasi kostum.")}
+              target="_blank"
+              rel="noopener"
+              className="mt-4 inline-flex items-center gap-2 rounded-[6px] border border-[var(--gold)] px-4 py-2.5 text-[0.82rem] font-medium tracking-[0.04em] text-[var(--silk)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--gold)] hover:text-[var(--on-gold)] active:scale-[0.98]"
+            >
+              <WhatsappLogo size={17} weight="fill" />
+              Pesan / Konsultasi via WhatsApp
+              <ArrowUpRight size={13} weight="bold" />
+            </a>
+          </div>
         </header>
 
         <div
