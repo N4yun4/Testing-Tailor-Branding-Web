@@ -83,6 +83,34 @@ export const budgets = [
   "Rp 3jt – Rp 5jt",
 ];
 
+export const sizes = ["S", "M", "L", "XL", "Custom"];
+
+// Tabel panduan ukuran (cm) — sumber: Algea Maker.
+export const sizeChartBase = {
+  caption: "Ukuran Dasar Wanita",
+  cols: ["S", "M", "L", "XL"],
+  rows: [
+    { label: "Lingkar badan", values: [86, 90, 100, 106] },
+    { label: "Lingkar pinggang", values: [64, 70, 76, 86] },
+    { label: "Lingkar panggul", values: [96, 100, 110, 116] },
+    { label: "Panjang bahu", values: [11, 12, 13, 14] },
+    { label: "Panjang lengan", values: [50, 53, 56, 60] },
+  ],
+};
+
+export const sizeChartPants = {
+  caption: "Celana Wanita",
+  cols: ["S", "M", "L"],
+  rows: [
+    { label: "Panjang celana", values: [90, 95, 100] },
+    { label: "Lingkar pinggang", values: [72, 76, 88] },
+    { label: "Lingkar pesak", values: [57, 63, 67] },
+    { label: "Lingkar paha", values: [52, 58, 64] },
+    { label: "Lingkar lutut", values: [40, 44, 48] },
+    { label: "Lingkar kaki", values: [36, 40, 44] },
+  ],
+};
+
 // NOTE: ganti angka ini dengan data aslimu biar tetap jujur.
 export const heroStats = [
   { value: "50+", label: "kostum selesai" },

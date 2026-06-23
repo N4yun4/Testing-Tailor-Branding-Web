@@ -3,6 +3,7 @@ import { Hero } from "./components/Hero";
 import { Vault } from "./components/Vault";
 import { Craft } from "./components/Craft";
 import { Commission } from "./components/Commission";
+import { SizingGuide } from "./components/SizingGuide";
 import { Footer } from "./components/Footer";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         <Vault />
         <Craft />
         <Commission />
+        <SizingGuide />
       </main>
       <Footer />
     </>

@@ -2,12 +2,12 @@ const links = [
   { label: "Instagram", href: "https://instagram.com" },
   { label: "X", href: "https://x.com" },
   { label: "TikTok", href: "https://tiktok.com" },
-  { label: "Panduan Ukuran (PDF)", href: "#sizing" },
+  { label: "Panduan Ukuran", href: "#sizing" },
 ];
 
 export function Footer() {
   return (
-    <footer id="sizing" className="relative">
+    <footer className="relative">
       <div aria-hidden className="mx-auto h-px max-w-[1240px] bg-[var(--hairline-soft)]" />
       <div className="mx-auto flex max-w-[1240px] flex-col items-start justify-between gap-6 px-5 py-12 sm:px-8 md:flex-row md:items-center md:py-16">
         <p className="text-[0.85rem] text-[var(--muted)]">
