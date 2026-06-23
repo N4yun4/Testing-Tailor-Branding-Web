@@ -7,36 +7,37 @@ export type Garment = {
   feature?: boolean;
 };
 
-// Curated, verified couture imagery (kept intentionally — relevant to the craft).
+// Foto kostum/busana saja (tanpa model). Ganti dengan foto kostum hasil
+// jahitanmu sendiri di /public untuk portofolio yang sesungguhnya.
 export const garments: Garment[] = [
   {
     index: "01",
     title: "Furina",
     origin: "Genshin Impact",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Cosplay_of_Furina%2C_Genshin_Impact.jpg/500px-Cosplay_of_Furina%2C_Genshin_Impact.jpg",
-    alt: "Cosplay Furina dari Genshin Impact dalam setelan biru putih dengan pose elegan",
+    img: "https://images.unsplash.com/photo-1551232864-3f0890e580d9?q=80&w=1200&auto=format&fit=crop",
+    alt: "Rak kostum dan busana terstruktur di atelier, tanpa model",
     feature: true,
   },
   {
     index: "02",
     title: "Hu tao",
     origin: "Genshin Impact",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Cosplay_of_Hu_Tao_at_Cos-Gen_2022.jpg/500px-Cosplay_of_Hu_Tao_at_Cos-Gen_2022.jpg",
-    alt: "Cosplay Hu Tao dari Genshin Impact menggunakan mantel gelap dengan topi ikoniknya di pelataran mall",
+    img: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=900&auto=format&fit=crop",
+    alt: "Koleksi busana tergantung rapi pada gantungan, tanpa model",
   },
   {
     index: "03",
     title: "Yae Miko",
     origin: "Genshin Impact",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Kumo_as_Yae_Miko_sitting%2C_left_side_20221016b.jpg/500px-Kumo_as_Yae_Miko_sitting%2C_left_side_20221016b.jpg",
-    alt: "Cosplay Yae Miko dari Genshin Impact berpose duduk menyamping mengenakan pakaian kuil merah-putih tradisional",
+    img: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=900&auto=format&fit=crop",
+    alt: "Busana digantung pada dinding bertekstur, tanpa model",
   },
   {
     index: "04",
     title: "Asuna SAO",
     origin: "Sword Art Online",
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Asuna_%2832300052106%29.jpg/500px-Asuna_%2832300052106%29.jpg",
-    alt: "Cosplay Asuna dari Sword Art Online (SAO) dengan gaun merah putih bergaris",
+    img: "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=1200&auto=format&fit=crop",
+    alt: "Busana tergantung pada gantungan kayu, tanpa model",
     feature: true,
   },
 ];
