@@ -50,10 +50,9 @@ export function Commission() {
   const errCls = "text-[0.78rem] text-[var(--gold)]";
 
   const pillCls = (active: boolean) =>
-    `rounded-full border px-[1.05rem] py-[0.6rem] text-[0.8rem] transition-all duration-300 active:scale-[0.97] ${
-      active
-        ? "border-[var(--gold)] bg-[var(--gold)] text-[var(--on-gold)]"
-        : "border-[var(--hairline)] bg-[var(--obsidian)] text-[var(--muted)] hover:border-[var(--gold)] hover:text-[var(--silk)]"
+    `rounded-full border px-[1.05rem] py-[0.6rem] text-[0.8rem] transition-all duration-300 active:scale-[0.97] ${active
+      ? "border-[var(--gold)] bg-[var(--gold)] text-[var(--on-gold)]"
+      : "border-[var(--hairline)] bg-[var(--obsidian)] text-[var(--muted)] hover:border-[var(--gold)] hover:text-[var(--silk)]"
     }`;
 
   const GroupLabel = ({ children }: { children: string }) => (
@@ -145,7 +144,7 @@ export function Commission() {
                     id="nama"
                     value={nama}
                     onChange={(e) => setNama(e.target.value)}
-                    placeholder="mis. Sastia Ramadhani"
+                    placeholder="Nama kamu"
                     autoComplete="name"
                     className={inputCls}
                     aria-invalid={!!errors.nama}
@@ -161,7 +160,7 @@ export function Commission() {
                     inputMode="numeric"
                     value={whatsapp}
                     onChange={(e) => setWhatsapp(e.target.value)}
-                    placeholder="mis. 0812-3456-7890"
+                    placeholder="0812-3456-7890"
                     autoComplete="tel"
                     className={inputCls}
                     aria-invalid={!!errors.whatsapp}
@@ -177,7 +176,7 @@ export function Commission() {
                     id="character"
                     value={character}
                     onChange={(e) => setCharacter(e.target.value)}
-                    placeholder="mis. Furina — Genshin Impact"
+                    placeholder="Furina — Genshin Impact"
                     className={inputCls}
                     aria-invalid={!!errors.character}
                   />
@@ -247,9 +246,8 @@ export function Commission() {
                         value={budget}
                         onChange={(e) => setBudget(e.target.value)}
                         aria-invalid={!!errors.budget}
-                        className={`${inputCls} cursor-pointer appearance-none pr-10 ${
-                          budget ? "" : "text-[var(--muted)]/70"
-                        }`}
+                        className={`${inputCls} cursor-pointer appearance-none pr-10 ${budget ? "" : "text-[var(--muted)]/70"
+                          }`}
                       >
                         <option value="" disabled>Pilih kisaran</option>
                         {budgets.map((b) => (
