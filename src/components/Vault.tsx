@@ -17,11 +17,11 @@ export function Vault() {
           [ Galeri ]
         </p>
         <h2 className="mt-4 font-serif text-[clamp(2.1rem,5vw,3.4rem)] font-medium leading-[1.05] tracking-[-0.01em]">
-          Kostum <span className="italic text-[var(--gold)]">Pilihan</span>
+          Yang Bisa <span className="italic text-[var(--gold)]">Kami Buat</span>
         </h2>
         <p className="mt-5 max-w-[52ch] text-[var(--muted)]">
-          Beberapa kostum yang pernah kami kerjakan — tiap pesanan dipola sesuai ukuran,
-          dijahit rapi, dan dirapikan sampai detail terakhir.
+          Dari jaket sampai gaun — tiap pesanan dipola sesuai ukuran, dijahit rapi,
+          dan dirapikan sampai detail terakhir.
         </p>
       </header>
 
