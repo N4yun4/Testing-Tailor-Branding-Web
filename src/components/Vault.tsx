@@ -23,6 +23,9 @@ export function Vault() {
           Dari jaket sampai gaun — tiap pesanan dipola sesuai ukuran, dijahit rapi,
           dan dirapikan sampai detail terakhir.
         </p>
+        <span className="mt-5 inline-flex items-center gap-2 text-[0.72rem] uppercase tracking-[0.18em] text-[var(--muted)] sm:hidden">
+          Geser <span className="animate-pulse text-[var(--gold)]">→</span>
+        </span>
       </header>
 
       <motion.div
@@ -30,15 +33,15 @@ export function Vault() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: "0px 0px -12% 0px" }}
-        className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:items-start"
+        className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 lg:items-start [&::-webkit-scrollbar]:hidden"
       >
         {garments.map((g, i) => (
           <motion.article
             key={g.index}
             variants={card}
-            className={`${g.feature ? "lg:col-span-2" : ""} ${
-              i === 1 ? "lg:mt-12" : i === 2 ? "lg:mt-12" : ""
-            }`}
+            className={`w-[80%] shrink-0 snap-start sm:w-auto sm:shrink ${
+              g.feature ? "lg:col-span-2" : ""
+            } ${i === 1 || i === 2 ? "lg:mt-12" : ""}`}
           >
             <SpotlightCard className="h-full overflow-hidden">
               <div className="relative aspect-4/5 overflow-hidden rounded-t-2xl">
@@ -54,7 +57,7 @@ export function Vault() {
                 <span className="absolute left-4 top-4 grid h-[2.2rem] w-[2.2rem] place-items-center rounded-full border border-[var(--hairline)] bg-[rgba(var(--bg-rgb),0.55)] font-serif text-[0.95rem] italic text-[var(--silk)] backdrop-blur-md">
                   {g.index}
                 </span>
-                <span className="absolute bottom-4 left-4 flex translate-y-2 items-center gap-1.5 rounded-full bg-[var(--gold)] px-[0.85rem] py-[0.45rem] text-[0.74rem] tracking-[0.04em] text-[var(--on-gold)] opacity-0 transition-all duration-400 [transition-timing-function:var(--ease-atelier)] group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="absolute bottom-4 left-4 flex translate-y-0 items-center gap-1.5 rounded-full bg-[var(--gold)] px-[0.85rem] py-[0.45rem] text-[0.74rem] tracking-[0.04em] text-[var(--on-gold)] opacity-100 transition-all duration-400 [transition-timing-function:var(--ease-atelier)] sm:translate-y-2 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
                   Lihat Spesifikasi Jahitan
                   <ArrowUpRight size={13} weight="bold" />
                 </span>
