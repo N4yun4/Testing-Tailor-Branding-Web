@@ -68,15 +68,15 @@ export function Hero() {
             </MagneticButton>
           </RevealItem>
 
-          <RevealItem className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-5">
+          <RevealItem className="mt-12 grid grid-cols-3 gap-x-4 gap-y-5 sm:flex sm:flex-wrap sm:items-center sm:gap-x-8">
             {heroStats.map((s, i) => (
               <div key={s.label} className="flex items-center gap-8">
                 {i > 0 && <span aria-hidden className="hidden h-9 w-px bg-[var(--hairline-soft)] sm:block" />}
                 <div className="flex flex-col">
-                  <strong className="font-serif text-[1.6rem] font-medium leading-none text-[var(--silk)]">
+                  <strong className="font-serif text-[1.45rem] font-medium leading-none text-[var(--silk)] sm:text-[1.6rem]">
                     {s.value}
                   </strong>
-                  <span className="mt-2 text-[0.72rem] uppercase tracking-[0.18em] text-[var(--muted)]">
+                  <span className="mt-2 text-[0.66rem] uppercase tracking-[0.16em] text-[var(--muted)] sm:text-[0.72rem] sm:tracking-[0.18em]">
                     {s.label}
                   </span>
                 </div>

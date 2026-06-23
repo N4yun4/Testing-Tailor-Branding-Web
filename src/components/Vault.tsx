@@ -11,8 +11,8 @@ export function Vault() {
   };
 
   return (
-    <section id="archive" className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 md:py-32">
-      <header className="mb-12 max-w-[640px] md:mb-16">
+    <section id="archive" className="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 md:py-32">
+      <header className="mb-10 max-w-[640px] md:mb-16">
         <p className="text-[0.72rem] font-medium uppercase tracking-[0.32em] text-[var(--muted)]">
           [ Galeri ]
         </p>

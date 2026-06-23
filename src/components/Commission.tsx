@@ -67,7 +67,7 @@ export function Commission() {
     <section id="commission" className="relative">
       <div aria-hidden className="mx-auto h-px max-w-[1240px] bg-[var(--hairline-soft)]" />
 
-      <div className="mx-auto grid max-w-[1240px] items-start gap-12 px-5 py-24 sm:px-8 md:grid-cols-[1fr_1.05fr] md:gap-20 md:py-32">
+      <div className="mx-auto grid max-w-[1240px] items-start gap-8 px-5 py-16 sm:px-8 md:grid-cols-[1fr_1.05fr] md:gap-20 md:py-32">
         <header className="md:sticky md:top-28">
           <p className="text-[0.72rem] font-medium uppercase tracking-[0.32em] text-[var(--muted)]">
             [ Buka Pesanan ]

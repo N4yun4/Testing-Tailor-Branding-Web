@@ -8,8 +8,8 @@ export function Craft() {
     <section id="craft" className="relative">
       <div aria-hidden className="mx-auto h-px max-w-[1240px] bg-[var(--hairline-soft)]" />
 
-      <div className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 md:py-32">
-        <header className="mb-16 max-w-[640px] md:mb-24">
+      <div className="mx-auto max-w-[1240px] px-5 py-16 sm:px-8 md:py-32">
+        <header className="mb-12 max-w-[640px] md:mb-24">
           <p className="text-[0.72rem] font-medium uppercase tracking-[0.32em] text-[var(--muted)]">
             [ Prosesnya ]
           </p>
@@ -22,7 +22,7 @@ export function Craft() {
           </p>
         </header>
 
-        <div className="flex flex-col gap-20 md:gap-28">
+        <div className="flex flex-col gap-14 md:gap-28">
           {craftSteps.map((step, i) => {
             const flipped = i % 2 === 1;
             return (
